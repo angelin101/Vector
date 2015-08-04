@@ -12,6 +12,9 @@ public class Vector<T> {
         array = (T[]) new Object[10];
         //numberOfLinks = 0;
     }
+    public Vector(T[] array){
+        this.array = array;
+    }
 
     public int getNumberOfLinks() {
         return numberOfLinks;
@@ -44,5 +47,37 @@ public class Vector<T> {
         array[numberOfLinks] = ob;
         numberOfLinks++;
     }
-    
+
+    public T getLink(int numberOfElement){
+        if (numberOfElement < 0 || numberOfElement >= numberOfLinks) {
+            throw new IndexOutOfBoundsException("Invalid numberOfElement index"); 
+        }
+        return array[numberOfElement];
+    }
+
+    public void removeLink(int numberOfElement){
+        if (numberOfElement < 0 || numberOfElement >= numberOfLinks) {
+            throw new IndexOutOfBoundsException("Invalid numberOfElement index"); 
+        }
+        T[] array2 = (T[]) new Object[array.length-1];
+        for (int i = 0; i < array2.length; i++) {
+            if (i >= numberOfElement) {
+                array2[i] = array[i+1];
+            }
+            else{
+                array2[i] = array[i];
+            }
+        }
+        array = array2;
+        numberOfLinks--;      
+    }
+
+    @Override
+    public String toString(){
+        String res ="";    
+        for (int i = 0; i < array.length; i++) {
+            res += array[i]+" "; 
+        }
+        return "Vector[]: {"+res+'}';
+    }
 }
