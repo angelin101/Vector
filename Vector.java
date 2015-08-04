@@ -1,7 +1,7 @@
 package vector;
 
 /**
- * Created by Ангелин on 03.08.2015.
+ * Created by РђРЅРіРµР»РёРЅ on 03.08.2015.
  */
 public class Vector<T> {
     private T[] array;
