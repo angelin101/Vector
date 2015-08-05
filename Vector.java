@@ -55,7 +55,8 @@ public class Vector<T> {
     // метод для получения ссылки расположеной в массиве под j-ым эллементом!
     public T getLink(int numberOfElement){
         if (numberOfElement < 0 || numberOfElement >= numberOfLinks) {
-            throw new IndexOutOfBoundsException("Invalid numberOfElement index");
+            System.err.println("Заданный эллемент отсутвтует в массиве!");
+            return;
         }
         return array[numberOfElement];
     }
@@ -63,7 +64,8 @@ public class Vector<T> {
     // метод удаляет ссылку в массиве под j-ым эллементом. При этом массив уменьшается!
     public void removeLink(int numberOfElement){
         if (numberOfElement < 0 || numberOfElement >= numberOfLinks) {
-            throw new IndexOutOfBoundsException("Invalid numberOfElement index");
+            System.err.println("Заданный эллемент отсутвтует в массиве!");
+            return;
         }
         T[] array2 = (T[]) new Object[array.length-1];
         for (int i = 0; i < array2.length; i++) {
