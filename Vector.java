@@ -1,4 +1,4 @@
-﻿package vector;
+package vector;
 
 /**
  * Created by Ангелин on 03.08.2015.
@@ -55,8 +55,8 @@ public class Vector<T> {
     // метод для получения ссылки расположеной в массиве под j-ым эллементом!
     public T getLink(int numberOfElement){
         if (numberOfElement < 0 || numberOfElement >= numberOfLinks) {
-            System.err.println("Заданный эллемент отсутвтует в массиве!");
-            return;
+            System.err.println("Заданный эллемент отсутствует в массиве!");
+            return null;
         }
         return array[numberOfElement];
     }
@@ -64,7 +64,7 @@ public class Vector<T> {
     // метод удаляет ссылку в массиве под j-ым эллементом. При этом массив уменьшается!
     public void removeLink(int numberOfElement){
         if (numberOfElement < 0 || numberOfElement >= numberOfLinks) {
-            System.err.println("Заданный эллемент отсутвтует в массиве!");
+            System.err.println("Заданный эллемент отсутствует в массиве!");
             return;
         }
         T[] array2 = (T[]) new Object[array.length-1];
